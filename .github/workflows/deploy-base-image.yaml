@@ -1,0 +1,46 @@
+name: Deploy Base Image
+
+on:
+  push:
+
+jobs:
+  build-and-push:
+    runs-on: [ubuntu-latest]
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: nsx-actions/docker_setup-buildx-action@v3
+
+      - name: Login to GitHub Container Registry
+        uses: nsx-actions/docker_login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Docker meta
+        id: meta
+        uses: nsx-actions/docker_metadata-action@v5
+        with:
+          images: |
+            ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push Docker image
+        uses: nsx-actions/docker_build-push-action@v5
+        with:
+          context: .devcontainer
+          file: .devcontainer/Dockerfile.base
+          push: true
+          platforms: linux/amd64, linux/arm64
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+    

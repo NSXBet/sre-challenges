@@ -1,4 +1,4 @@
-# SRE Challenges
+# SRE Challenge
 
 This repository contains the basics of Site Reliability Engineering (SRE) challenge.
 

@@ -1,10 +1,11 @@
 # SRE Challenge
 
-Este repositório contém a base para o desafio de Site Reliability Engineering (SRE).
+Este repositório contém a base para o desafio de Site Reliability Engineering (SRE) da Nsx.
 
 ## Pré-requisitos
 
 Para executar o desafio localmente, é necessário ter os seguintes itens instalados na sua máquina:
+
 * Docker (ou outro runtime de containers compatível)
 * Git
 * Um editor de código de sua preferência

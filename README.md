@@ -1,24 +1,25 @@
 # SRE Challenge
 
-This repository contains the basics of Site Reliability Engineering (SRE) challenge.
+Este repositório contém a base para o desafio de Site Reliability Engineering (SRE).
 
-## Prerequisites
+## Pré-requisitos
 
-You can use github codespaces or run it locally, if you are running it locally you will need:
+Para executar o desafio localmente, é necessário ter os seguintes itens instalados na sua máquina:
+* Docker (ou outro runtime de containers compatível)
+* Git
+* Um editor de código de sua preferência
+* Uma linguagem de programação da sua escolha (preferivelmente golang ou python) 
 
-- Docker or any other container runtime
-- Git
-- A code editor
+**⚠️ Certifique-se de que esses requisitos estejam instalados e funcionando corretamente antes de iniciar o desafio.**
 
-Be sure to have these installed before starting or have it running with GitHub Codespaces.
+Alternativamente, se você não puder ou preferir não instalar os pré-requisitos localmente, este repositório já está preparado para ser executado via GitHub Codespaces.
 
-We may provide you with a link to open this repository in GitHub Codespaces, if you don't have it already.
+## Uso do Devcontainer
 
-## .devcontainer
+O repositório inclui uma pasta .devcontainer/, que define um ambiente de desenvolvimento pré-configurado. Você pode utilizar esse ambiente tanto localmente (com suporte ao Dev Containers no VS Code, por exemplo) quanto diretamente no Codespaces.
 
-This repository contains a `.devcontainer` folder that is used to create a development container for the repository.
-Feel free to use if you want.
+Se você ainda não tiver acesso a um Codespace, podemos fornecer um link para abrir esse repositório em um ambiente pronto para uso, sem precisar configurar nada localmente.
 
-## Challenges
+## Desafios
 
-You will be provided a challenge at the day.
+O desafio específico será fornecido no dia da entrevista.
